@@ -393,6 +393,7 @@ class NVD3Chart:
         self.jschart += 'nv.addGraph(function() {\n'
 
         self.jschart += stab(2) + 'var chart = nv.models.%s()' % self.model
+        # add use of InteractiveGuideline
         if self.use_interactive_guideline:
             self.jschart += '.useInteractiveGuideline(true)'
         self.jschart += ';\n'

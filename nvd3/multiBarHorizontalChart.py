@@ -94,8 +94,10 @@ class multiBarHorizontalChart(NVD3Chart):
         NVD3Chart.__init__(self, **kwargs)
         height = kwargs.get('height', 450)
         width = kwargs.get('width', None)
+        avoid_x_axis = kwargs.get('avoid_x_axis',False)
 
-        self.create_x_axis('xAxis', format=kwargs.get('x_axis_format', '.2f'))
+        if not avoid_x_axis: 
+            self.create_x_axis('xAxis', format=kwargs.get('x_axis_format', '.2f'))
         self.create_y_axis('yAxis', format=kwargs.get('y_axis_format', '.2f'))
         # must have a specified height, otherwise it superimposes both chars
         if height:
